@@ -27,7 +27,7 @@ void main() {
 		num += a * cos(b + c * (A + i * dt)) * dt;
 	}
 
-	anal = (a / c) * sin(b + c * (B - A));
+	anal = (a / c) * sin(b + c * B) - sin(b + c * A));
 	cout << " num " << num << " anal " << anal << endl;
 	cout << " error = " << (num - anal) / anal * 100 << "%\n";
 }
