@@ -1,13 +1,19 @@
-#include <iostream>
-#include "Car.h"
-#include "Engineer.h"
-using namespace std;
-int main() {
-	Car* myCar;
-	myCar = new Car(100.0, 4, 4500.);
-	Engineer* ee;
-	ee = new Engineer;
-	cout << ee->getCarPrice(myCar) << endl;
-	cout << ee->getWheels(myCar) << endl;
-	cout << ee->getSpeed(myCar) << endl;
-}
+#pragma once
+class Car {
+public:
+	Car() :speed(0.1), wheels(0), price(0.2) {};
+	Car(float, int, float);
+	int wheels;
+	void setPrice(float);
+	float getPrice();
+	void setWheels(int);
+	int getWheels();
+	float getSpeed();
+
+	friend class Engineer;
+// protected://상속 O
+	float price;
+
+// private : //상속 X
+	float speed;
+};
